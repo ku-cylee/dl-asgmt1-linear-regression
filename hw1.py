@@ -14,8 +14,9 @@ def MSE(x, A, b):
     ##############################
     # You need to fill in here.
     # Your function must return the MSE between Ax and b
-    
-    return ...
+
+    differenceVector = A @ x - b    
+    return np.linalg.norm(differenceVector)
 
 # size of matrix A (m by n) and b (m by 1)
 m = 1000
@@ -43,7 +44,7 @@ x0 = np.random.normal(mu, sig, n)
 ##############################
 # use minimize function to find the best parameter estimate
 # you need to properly use minimize function below
-estim = minimize(...)
+estim = minimize(lambda x: MSE(x, A, b), x0)
 
 print('solution from minimize:', estim.x)
 print('true x', x_true)
