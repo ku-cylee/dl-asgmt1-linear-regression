@@ -15,8 +15,8 @@ def MSE(x, A, b):
     # You need to fill in here.
     # Your function must return the MSE between Ax and b
 
-    differenceVector = A @ x - b    
-    return np.linalg.norm(differenceVector)
+    diff_vec = A @ x - b    
+    return diff_vec.T @ diff_vec
 
 # size of matrix A (m by n) and b (m by 1)
 m = 1000
